@@ -5,11 +5,16 @@ Elder Scrolls Imperial Library — Book Scraper
 Scrapes all books (excluding Journals, Notes, and Letters) from:
   https://www.imperial-library.info/game-books
 
-Produces 4 Kindle-ready EPUB files:
+Produces 5 Kindle-ready EPUB files:
   • Daggerfall_Tomes.epub
   • Morrowind_Tomes.epub
   • Oblivion_Tomes.epub
   • Skyrim_Tomes.epub
+  • ESO_Tomes.epub
+
+Usage:
+  python3 scrape_elder_scrolls.py               # all games
+  python3 scrape_elder_scrolls.py --only ESO    # single game by name
 
 Required packages are installed automatically.
 """
@@ -96,6 +101,18 @@ GAMES: List[Dict] = [
             "A collection of in-game books from "
             "The Elder Scrolls V: Skyrim (2011), "
             "including the Dawnguard and Dragonborn expansions."
+        ),
+    },
+    {
+        "name":        "ESO",
+        "url":         f"{BASE_URL}/game-books/elder-scrolls-online-books",
+        "filename":    "ESO_Tomes.epub",
+        "title":       "ESO Tomes",
+        "subtitle":    "The Elder Scrolls Online",
+        "description": (
+            "A collection of in-game books from "
+            "The Elder Scrolls Online (2014+), "
+            "including all expansions and DLC chapters."
         ),
     },
 ]
@@ -426,6 +443,24 @@ def create_epub_file(game: Dict, books: List[Dict]) -> str:
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
+    import argparse
+    parser = argparse.ArgumentParser(description="Elder Scrolls book scraper")
+    parser.add_argument(
+        "--only",
+        metavar="NAME",
+        help="Process only the game matching this name (e.g. ESO, Skyrim, Daggerfall)",
+    )
+    args = parser.parse_args()
+
+    games_to_run = GAMES
+    if args.only:
+        needle = args.only.strip().lower()
+        games_to_run = [g for g in GAMES if g["name"].lower() == needle]
+        if not games_to_run:
+            names = ", ".join(g["name"] for g in GAMES)
+            print(f"No game matched '{args.only}'. Available: {names}")
+            sys.exit(1)
+
     print("=" * 56)
     print("  Elder Scrolls Imperial Library — Book Scraper")
     print("=" * 56)
@@ -433,7 +468,7 @@ def main() -> None:
     session = make_session()
     created: List[str] = []
 
-    for game in GAMES:
+    for game in games_to_run:
         print(f"\n{'─' * 56}")
         print(f"  {game['title']}")
         print(f"  {game['url']}")

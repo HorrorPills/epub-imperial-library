@@ -15,7 +15,8 @@ A collection of in-game books from *The Elder Scrolls* series, compiled from [Th
 | `Morrowind_Tomes.epub` | TES III: Morrowind + Tribunal + Bloodmoon | 2002–2003 | 233 | 840 KB |
 | `Oblivion_Tomes.epub` | TES IV: Oblivion + KotN + Shivering Isles | 2006–2007 | 225 | 856 KB |
 | `Skyrim_Tomes.epub` | TES V: Skyrim + Dawnguard + Dragonborn | 2011–2012 | 384 | 1.2 MB |
-| | | **Total** | **905** | |
+| `ElderScrollsOnline_Tomes.epub` | Elder Scrolls Online | 2014+ | 2533 | 4.5 MB |
+| | | **Total** | **3438** | |
 
 ---
 
@@ -963,6 +964,8 @@ A collection of in-game books from *The Elder Scrolls* series, compiled from [Th
 384. A Minor Maze
 
 </details>
+
+### ...and 2500+ Elder Scrolls Online books!
 
 ---
 

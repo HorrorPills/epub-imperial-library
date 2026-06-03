@@ -23,6 +23,8 @@ A collection of in-game books from *The Elder Scrolls* series, compiled from [Th
 ---
 
 ## Book Lists
+<img width="4032" height="3024" alt="IMG_4192 (1)" src="https://github.com/user-attachments/assets/beab5061-76de-42e6-936e-e3e532484e61" />
+
 
 <details>
 <summary><strong>📖 Daggerfall Tomes — 63 books</strong></summary>

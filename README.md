@@ -1,3 +1,5 @@
+<img width="683" height="1024" alt="ebookfinal" src="https://github.com/user-attachments/assets/81d89037-f9d4-452f-9c42-ff7e5304b263" />
+
 # The Elder Scrolls Tomes
 
 A collection of in-game books from *The Elder Scrolls* series, compiled from [The Imperial Library](https://www.imperial-library.info/game-books) and packaged as four Kindle-ready EPUB files.
